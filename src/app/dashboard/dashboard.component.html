@@ -1,62 +1,8 @@
 <nz-layout class="h-100">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="350px">
     <div class="logo"></div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
-        <span nz-icon nzType="pie-chart"></span>
-        <span>Option 1</span>
-      </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="desktop"></span>
-        <span>Option 2</span>
-      </li>
-      <li nz-submenu nzTitle="STM" nzIcon="area-chart">
-        <ul>
-          <li nz-submenu nzTitle="Biểu đồ tổng quan" nzIcon="area-chart">
-            <ul>
-              <li nz-menu-item [routerLink]="'/dashboard/chart/shipment-by-status'" routerLinkActive="active" >Trạng thái chuyến</li>
-              <li nz-menu-item [routerLink]="'/dashboard/chart/shipment-by-total'" routerLinkActive="active">Tổng</li>
-              <li nz-menu-item>Alex</li>
-            </ul>
-          </li>
-          <li nz-submenu nzTitle="Biểu đồ đánh giá" nzIcon="area-chart">
-            <ul>
-              <li nz-submenu nzTitle="Kế Hoạch" nzIcon="area-chart">
-                <ul>
-                  <li nz-menu-item>Tom</li>
-                  <li nz-menu-item>Bill</li>
-                  <li nz-menu-item>Alex</li>
-                </ul>
-              </li>
-              <li nz-submenu nzTitle="Vận Tải" nzIcon="area-chart">
-                <ul>
-                  <li nz-menu-item>Tom</li>
-                  <li nz-menu-item>Bill</li>
-                  <li nz-menu-item>Alex</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li nz-submenu nzTitle="Chỉ số đánh giá hiệu quả công việc" nzIcon="area-chart">
-            <ul>
-              <li nz-menu-item>Tom</li>
-              <li nz-menu-item>Bill</li>
-              <li nz-menu-item>Alex</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
-        <span>File</span>
-      </li>
-    </ul>
+    <router-outlet name="shipment-by-status"></router-outlet>
+    <app-list-ul-li></app-list-ul-li>
   </nz-sider>
   <nz-layout>
     <nz-header></nz-header>
@@ -65,15 +11,10 @@
         <nz-breadcrumb-item>User</nz-breadcrumb-item>
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
-<!--      <app-inner-content [text]="text"/>-->
       <div class="inner-content">
-        <ng-container>
-          <router-outlet></router-outlet>
-        </ng-container>
+        <router-outlet></router-outlet>
       </div>
     </nz-content>
     <nz-footer class="inner-content-end">Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
-
 </nz-layout>
-

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.ant-layout-sider-children {
+  height: 100%;
+  margin-top: -0.1px;
+  padding-top: 0.1px;
+}
+
+.ant-menu-dark.ant-menu-inline .ant-menu-item,
+.ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  width: 100%;
+  padding: 25px;
+}
