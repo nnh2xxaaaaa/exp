@@ -9,7 +9,6 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserComponent } from './user/user.component';
 import {NzInputNumberModule} from "ng-zorro-antd/input-number";
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import {NzMenuModule} from "ng-zorro-antd/menu";
@@ -21,7 +20,6 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +32,7 @@ registerLocaleData(en);
     NzMenuModule,
     NzLayoutModule,
     NzBreadCrumbModule,
-    NzIconModule
+    NzIconModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
@@ -42,6 +40,3 @@ registerLocaleData(en);
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-// TypeScript Module
-// TypeScript Decorator
-// Metadata

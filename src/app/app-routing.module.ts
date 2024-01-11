@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ShipmentByStatusComponent} from "./chart-demo/shipment-by-status/shipment-by-status.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
-  { path: 'dashboard', pathMatch: 'full', loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent) },
-  { path: 'dashboard/chart/shipment-by-status', pathMatch: 'full', loadComponent: () => import('./chart-demo/shipment-by-status/shipment-by-status.component').then(m => m.ShipmentByStatusComponent) ,outlet: 'shipment-by-status'},
-  { path: 'dashboard/chart/shipment-by-total', pathMatch: 'full', loadComponent: () => import('./chart-demo/shipment-by-total/shipment-by-total.component').then(m => m.ShipmentByTotalComponent),outlet: 'shipment-by-total' },
+
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'stm',
+        loadChildren: () =>
+          import('./stm-chart/stm-routing.module').then((m) => m.StmRoutingRoutingModule),
+      },
+    ],
+  },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

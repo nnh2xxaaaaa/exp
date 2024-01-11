@@ -20,7 +20,7 @@ nz-breadcrumb {
 .inner-content {
   padding: 24px;
   background: #fff;
-  min-height: 360px;
+  min-height: 100%;
 }
 
 nz-footer {
@@ -30,10 +30,4 @@ nz-footer {
 
 .inner-content-end {
   height: calc(120px - 70px);
-}
-
-.active {
-  background-color: #1890ff;  /* You can customize the background color */
-  color: #fff;  /* You can customize the text color */
-  font-weight: bold;  /* You can customize the font weight */
 }
