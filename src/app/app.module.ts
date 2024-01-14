@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +15,7 @@ import {NzMenuModule} from "ng-zorro-antd/menu";
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
 import {NzIconModule} from "ng-zorro-antd/icon";
+import { ShipmentByStatusComponent } from './stm-chart/shipment-by-status/shipment-by-status.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -33,6 +34,7 @@ registerLocaleData(en);
     NzLayoutModule,
     NzBreadCrumbModule,
     NzIconModule,
+    CommonModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
