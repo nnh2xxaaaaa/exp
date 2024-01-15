@@ -1,0 +1,18 @@
+.page-header {
+  padding: 16px;
+}
+
+.page-content {
+  background-color: #fff;
+  margin: 16px;
+}
+.page-footer {
+  background-color: #fff;
+  padding: 16px;
+}
+
+.page-scroll {
+  height: calc(100vh - 96px);
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
