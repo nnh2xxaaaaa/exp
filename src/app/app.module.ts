@@ -9,13 +9,12 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NzInputNumberModule} from "ng-zorro-antd/input-number";
+import { NzInputNumberModule } from "ng-zorro-antd/input-number";
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
-import {NzMenuModule} from "ng-zorro-antd/menu";
-import {NzLayoutModule} from "ng-zorro-antd/layout";
-import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
-import {NzIconModule} from "ng-zorro-antd/icon";
-import { ShipmentByStatusComponent } from './stm-chart/shipment-by-status/shipment-by-status.component';
+import { NzMenuModule } from "ng-zorro-antd/menu";
+import { NzLayoutModule } from "ng-zorro-antd/layout";
+import { NzBreadCrumbModule } from "ng-zorro-antd/breadcrumb";
+import { NzIconModule } from "ng-zorro-antd/icon";
 registerLocaleData(en);
 
 @NgModule({
@@ -34,7 +33,7 @@ registerLocaleData(en);
     NzLayoutModule,
     NzBreadCrumbModule,
     NzIconModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

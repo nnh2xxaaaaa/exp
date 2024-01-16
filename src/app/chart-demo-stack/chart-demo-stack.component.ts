@@ -1,5 +1,5 @@
-import { Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 // amCharts imports
 import * as am5 from '@amcharts/amcharts5';
@@ -12,7 +12,9 @@ import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
   selector: 'app-chart-demo-stack',
   templateUrl: './chart-demo-stack.component.html',
   styleUrls: ['./chart-demo-stack.component.scss'],
-  imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule],
+
 })
 export class ChartDemoStackComponent {
   private root!: am5.Root;
@@ -37,8 +39,10 @@ export class ChartDemoStackComponent {
 
       let chart = root.container.children.push(
         am5xy.XYChart.new(root, {
-          panY: false,
-          layout: root.verticalLayout
+          layout: root.verticalLayout,
+          panX: true,
+          panY: true,
+
         })
       );
 
@@ -73,6 +77,8 @@ export class ChartDemoStackComponent {
         }
       ];
 
+
+
       // Create Y-axis
       let yAxis = chart.yAxes.push(
         am5xy.ValueAxis.new(root, {
@@ -96,9 +102,10 @@ export class ChartDemoStackComponent {
           xAxis: xAxis,
           yAxis: yAxis,
           valueYField: "value1",
-          categoryXField: "category"
+          categoryXField: "category",
         })
       );
+
       series1.data.setAll(data);
 
       let series2 = chart.series.push(
@@ -107,9 +114,12 @@ export class ChartDemoStackComponent {
           xAxis: xAxis,
           yAxis: yAxis,
           valueYField: "value2",
-          categoryXField: "category"
+          categoryXField: "category",
+          fill: am5.color(0x095256),
+          stroke: am5.color(0x095256),
         })
       );
+
       series2.data.setAll(data);
 
       // Add legend

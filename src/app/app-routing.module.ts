@@ -13,7 +13,15 @@ const routes: Routes = [
         loadChildren: () =>
           import('./stm-chart/stm-routing.module').then((m) => m.StmRoutingRoutingModule),
       },
+
+      {
+        path: 'student',
+        loadChildren: () =>
+          import('./student/student-routing.module').then((m) => m.StudentRoutingModule),
+      },
     ],
+
+
   },
   { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
@@ -21,6 +29,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  
+
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

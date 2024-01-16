@@ -6,7 +6,8 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { InnerContentComponent } from '../inner-content/inner-content.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { StmChartComponent } from '../stm-chart/stm-chart.component';
-import {NzSpinModule} from 'ng-zorro-antd/spin';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { StudentListNavbarComponent } from "../student/student-list-navbar/student-list-navbar.component";
 
 const nzModules = [
   NzBreadCrumbModule,
@@ -27,7 +28,8 @@ const nzModules = [
     RouterLinkActive,
     RouterOutlet,
     StmChartComponent,
-  ],
+    StudentListNavbarComponent
+  ]
 })
 export class DashboardComponent {
   @Input() text: string = '';

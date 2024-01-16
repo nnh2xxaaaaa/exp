@@ -1,9 +1,10 @@
 <nz-layout class="h-100">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="350px">
-    <div class="logo"></div>  
-    <ul nz-menu  nzTheme="dark" nzMode="inline" class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open">
       <app-stm-chart></app-stm-chart>
-    </ul> 
+      <app-student-list-navbar></app-student-list-navbar>
+    </ul>
   </nz-sider>
   <nz-layout>
     <nz-header></nz-header>
