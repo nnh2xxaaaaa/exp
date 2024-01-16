@@ -1,4 +1,4 @@
-<nz-layout class="h-100">
+<nz-layout class="h-100 box-container">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="350px">
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline" class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open">
@@ -13,7 +13,11 @@
         <nz-breadcrumb-item>User</nz-breadcrumb-item>
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
-      <div class="inner-content">
+      <div class="inner-content m-0">
+        <div class="page-content p-0 m-0 ">
+          <div class="flex-grow-1">
+          </div>
+        </div>
         <router-outlet></router-outlet>
       </div>
     </nz-content>

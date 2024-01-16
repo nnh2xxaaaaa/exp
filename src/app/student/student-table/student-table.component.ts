@@ -34,10 +34,6 @@ export class StudentTableComponent {
     private readonly store: StudentStores
   ) {
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges', changes);
-
-  }
 
   searchValue = '';
   visible = false;
